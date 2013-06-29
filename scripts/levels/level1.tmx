@@ -1,44 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="16" tilewidth="25" tileheight="25">
- <tileset firstgid="1" name="tiles" tilewidth="25" tileheight="25">
-  <image source="../images/tiles.png" width="200" height="25"/>
+<map version="1.0" orientation="orthogonal" width="30" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="grid_pieces" tilewidth="32" tileheight="32">
+  <image source="../../assets/images/grid_pieces.png" width="320" height="320"/>
  </tileset>
- <tileset firstgid="9" name="Hero" tilewidth="25" tileheight="25">
-  <image source="../images/hero.png" width="225" height="50"/>
- </tileset>
- <tileset firstgid="27" name="items" tilewidth="25" tileheight="25">
-  <image source="../images/items.png" width="250" height="50"/>
- </tileset>
- <layer name="Base" width="20" height="16">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,7,0,0,0,7,7,0,0,0,0,0,
-0,0,0,0,0,0,0,0,7,0,0,0,7,0,8,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,
-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,
-1,2,2,5,0,0,0,0,7,0,0,0,6,2,5,0,0,0,0,0,
-1,1,1,3,0,0,6,2,2,5,0,6,1,1,1,5,0,0,0,0,
-1,1,1,3,0,6,1,1,1,1,2,1,1,1,1,1,5,0,0,0,
-1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-</data>
+ <layer name="Tile Layer 1" width="30" height="19">
+  <data encoding="base64" compression="zlib">
+   eJzF0ElLxEAQBeDAxGUE93GHuI5GUEdGcBsFN1wvcbv0Of//N/gCVfAo0unMeMjhI9Wvt+r0oyjqi2M4oXGPajUIzIfYO6yyM0N72GmNvgdD3q8u4BKu4Dpwzn9xH/fwAI/wVPFvevJ+nr9pyJt4gVep3+FD6nGYgElowxTtqct3duETvuAbfuBX8jmYhwVYhE7F+WU9PlecPYwlWIYVWIU1z3tCPdbpmec3YQu2YQd2A+/ZhwPYg65kGzR/OMJ/raL3JSKDFqzLWO8+M73U/dr32Ptm5OsoS6iHW+ql+MY0PqJ1LZMX7xgz58WSZZTltK7Ip6UnXZdSNivZuclSyh1ldq8ryVLJuT9nes0ku6Nc12uem1zrTOZsHkvOveSmV1eyRmtfrrXz5FonHrnwzYeE9qYNGfU9dfnua+q9f0v/Zao=
+  </data>
  </layer>
- <objectgroup color="#5e3ea4" name="Hero" width="20" height="16">
-  <object gid="9" x="0" y="25"/>
- </objectgroup>
- <objectgroup name="Items" width="20" height="16">
-  <object gid="41" x="350" y="150"/>
-  <object gid="41" x="275" y="300"/>
-  <object gid="41" x="125" y="225"/>
-  <object gid="41" x="425" y="250"/>
-  <object gid="39" x="175" y="300"/>
-  <object gid="39" x="225" y="150"/>
-  <object gid="41" x="125" y="75"/>
- </objectgroup>
 </map>
