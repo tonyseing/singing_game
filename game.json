@@ -5,12 +5,14 @@
   "canvas-id": "game-canvas",
 
   //ignore entity scripts
-  "entity-ignore": "wait",
+  "entity-ignore": "wait group",
   
   "tests-ignore": null,
   "scripts-ignore": null,
+
+  //ignores scripts on the test page
   "tests-scripts-ignore":"init.js",
 
-  //order scripts
-  "scripts-order": null
+  //this makes all .tmx files last
+  "scripts-order":".*/.js"
 }
