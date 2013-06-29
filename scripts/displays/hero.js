@@ -19,7 +19,7 @@ re.c('hero')
   update:function(){
     
     //jump
-    if(this.ground && !this.jump && re.pressed('w')){
+    if(re.pressed('w')){
       this.forceJump();
     }
     
@@ -45,7 +45,7 @@ re.c('hero')
   
   forceJump:function(){
     this.jump = true;
-    this.velY -= this.jumpSpeed;
+    this.velY -= this.jumpSpeed * 0.1;
     
     this.animate('jump');
   },
