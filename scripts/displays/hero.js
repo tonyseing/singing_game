@@ -1,5 +1,5 @@
 re.c('hero')
-.requires('hero.png tsprite update force animate body')
+.requires('queenplane_sm.gif tsprite update force animate body')
 .defines({
   
   speed:40 * re.sys.stepSize,
