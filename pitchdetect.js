@@ -1,5 +1,3 @@
-// library developed by Eric Bidelman @ HTML5rocks
-
 var audioContext = new webkitAudioContext();
 var isPlaying = false;
 var sourceNode = null;
@@ -13,16 +11,6 @@ var detectorElem,
 	detuneAmount;
 
 window.onload = function() {
-	var request = new XMLHttpRequest();
-	request.open("GET", "../sounds/whistling3.ogg", true);
-	request.responseType = "arraybuffer";
-	request.onload = function() {
-	  audioContext.decodeAudioData( request.response, function(buffer) { 
-	    	theBuffer = buffer;
-		} );
-	}
-	request.send();
-
 	detectorElem = document.getElementById( "detector" );
 	canvasElem = document.getElementById( "output" );
 	pitchElem = document.getElementById( "pitch" );
@@ -33,31 +21,11 @@ window.onload = function() {
 	detectorElem.ondragenter = function () { 
 		this.classList.add("droptarget"); 
 		return false; };
-	detectorElem.ondragleave = function () { this.classList.remove("droptarget"); return false; };
-	detectorElem.ondrop = function (e) {
-  		this.classList.remove("droptarget");
-  		e.preventDefault();
-		theBuffer = null;
+	
 
-	  	var reader = new FileReader();
-	  	reader.onload = function (event) {
-	  		audioContext.decodeAudioData( event.target.result, function(buffer) {
-	    		theBuffer = buffer;
-	  		}, function(){alert("error loading!");} ); 
+}
 
-	  	};
-	  	reader.onerror = function (event) {
-	  		alert("Error: " + reader.error );
-		};
-	  	reader.readAsArrayBuffer(e.dataTransfer.files[0]);
-	  	return false;
-	};
-
-
-
-
-
-  function convertToMono( input )} {
+function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
     var merger = audioContext.createChannelMerger(2);
 
@@ -75,7 +43,7 @@ function getUserMedia(dictionary, callback) {
     try {
         navigator.webkitGetUserMedia(dictionary, callback, error);
     } catch (e) {
-        alert('webkitGetUserMedia threw exception :' + e);
+        console.log('webkitGetUserMedia threw exception :' + e);
     }
 }
 
@@ -94,34 +62,7 @@ function toggleLiveInput() {
     getUserMedia({audio:true}, gotStream);
 }
 
-function togglePlayback() {
-    var now = audioContext.currentTime;
 
-    if (isPlaying) {
-        //stop playing and return
-        sourceNode.noteOff( now );
-        sourceNode = null;
-        analyser = null;
-        isPlaying = false;
-        webkitCancelAnimationFrame( rafID );
-        return "start";
-    }
-
-    sourceNode = audioContext.createBufferSource();
-    sourceNode.buffer = theBuffer;
-    sourceNode.loop = true;
-
-    analyser = audioContext.createAnalyser();
-    analyser.fftSize = 2048;
-    sourceNode.connect( analyser );
-    analyser.connect( audioContext.destination );
-    sourceNode.noteOn( now );
-    isPlaying = true;
-    isLiveInput = false;
-    updatePitch();
-
-    return "stop";
-}
 
 var rafID = null;
 var tracks = null;

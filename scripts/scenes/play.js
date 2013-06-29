@@ -1,6 +1,6 @@
 re.scene('play')
 .enter(function(level){
-  
+
   //offset screen because all tiles are centered..
   //checkout tsprite.js
   re.screen.pos(-re.tile.sizeX * 0.5, -re.tile.sizeY * 0.5);
