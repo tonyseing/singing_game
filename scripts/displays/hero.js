@@ -12,13 +12,15 @@ re.c('hero')
   bodyX:24,
   bodyY:24,
   
-  jumpSpeed:90 * re.sys.stepSize,
+  jumpSpeed:60 * re.sys.stepSize,
   jump:false,
   ground:true,
   
   update:function(){
     
     //jump
+    
+
     if(re.pressed('w')){
       this.forceJump();
     }
@@ -48,6 +50,7 @@ re.c('hero')
     this.velY -= this.jumpSpeed * 0.1;
     
     this.animate('jump');
+   console.log ('forcejump');
   },
   
   jumpReset:function(x, y, tx, ty){
@@ -169,6 +172,7 @@ re.c('hero')
 
     function frequencyFromNoteNumber( note ) {
       console.log("frequencyFromNoteNumber: " + (440 * Math.pow(2,(note-69)/12)));
+      console.log(this);
       return 440 * Math.pow(2,(note-69)/12);
       
     }
@@ -245,6 +249,7 @@ re.c('hero')
   
   this.on({
     update:this.update,
+    noteSounded: this.forceJump,
     aftermath:this.jumpReset
   });
   
