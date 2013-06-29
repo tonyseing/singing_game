@@ -6,8 +6,9 @@ re.scene('load')
   re.sys.clearColor = '#D6F8FA';
   
   //setup gravity
-  re.force.graY = 30 * re.sys.stepSize;
-  
+ // re.force.graY = 30 * re.sys.stepSize;
+  re.force.graY = 0.1; 
+ 
   re.load(re.assets)
   .complete(function(){
     
