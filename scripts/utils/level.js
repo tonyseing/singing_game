@@ -73,11 +73,18 @@ re.c('level')
     
     var pos = this.objectgroup[0].object;
     
-    re.e('hero')
+
+    
+
+    var hero = re.e('hero')
     .attr({
       posX:pos.x,
       posY:pos.y - re.tile.sizeY //tiled editor adds an extra tile to y
     });
+
+    // initialize microphone
+    mic = re.e('microphone_controller');
+    
     
   }
   
