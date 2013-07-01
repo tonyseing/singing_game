@@ -262,8 +262,6 @@ re.c('level')
 
       // initialize microphone
       this.micController(this);
-
-      
       
     }
     
