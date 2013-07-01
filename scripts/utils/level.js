@@ -183,6 +183,11 @@ re.c('level')
       }
 
       function  flyFromFrequency(frequency) {
+        if (frequency > 500)
+          jumpLimit = 4;
+        else
+          jumpLimit = frequency / 100;
+
         for (var i = 0, jumpLimit = frequency / 100; i < jumpLimit; i++) {
           hero.forceJump();
           console.log("flyFromFrequency() frequency: " + frequency)
@@ -264,6 +269,7 @@ re.c('level')
     
     placeHero:function(){
       var pos = this.objectgroup[0].object;
+      pos.y = 155; // determines starting position
       hero = re.e('hero').attr({
         posX:pos.x,
         posY: pos.y - re.tile.sizeY   //tiled editor adds an extra tile to y

@@ -17,29 +17,7 @@ re.c('hero')
   ground:true,
   
   update:function(){
-    
-    //jump
-    
-
-    if(re.pressed('w')){
-      this.forceJump();
-    }
-    
-    //walk back and fourth
-    if(re.pressed('a')){
-      this.velX -= this.speed;
-      this.scaleX = -1;
-      
-      if(!this.jump) this.animate('run');
-    }
-    
-    if(re.pressed('d')){
-      this.velX += this.speed;
-      this.scaleX = 1;
-      
-      if(!this.jump) this.animate('run');
-    }
-    
+             
     //switch back to idle animation if stopped moving
     if(this.isIdle(0.3)) this.animate('idle');
     
@@ -50,7 +28,14 @@ re.c('hero')
     this.velY -= this.jumpSpeed * 0.1;
     
     this.animate('jump');
-   console.log ('forcejump');
+ 
+  },
+
+  forceDown:function() {
+    for (var i = 0; i < 10; i++ )
+      {
+        this.posY += 0.2;
+      }
   },
   
   jumpReset:function(x, y, tx, ty){
