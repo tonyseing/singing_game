@@ -5,8 +5,9 @@ re.c('level')
       if(re.hitmap){
         re.hitmap.dispose();
       }
+
       re.hitmap = re.e('hitmap');
-      
+
       this.placeTiles();
       
       this.placeHero();
@@ -40,7 +41,7 @@ re.c('level')
             });
             
             //add to hitmap
-            re.hitmap.automap(x, y, 1);
+           re.hitmap.automap(x, y, 1);
             
           }
           
@@ -75,7 +76,6 @@ re.c('level')
       var sourceNode = null;
       var analyser = null;
       var theBuffer = null;
-      
       var detectorElem, 
       canvasElem,
       pitchElem,
@@ -266,7 +266,7 @@ re.c('level')
       var pos = this.objectgroup[0].object;
       hero = re.e('hero').attr({
         posX:pos.x,
-        posY:pos.y - re.tile.sizeY //tiled editor adds an extra tile to y
+        posY: pos.y - re.tile.sizeY   //tiled editor adds an extra tile to y
       });
 
       // initialize microphone

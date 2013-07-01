@@ -12,7 +12,7 @@ re.c('hero')
   bodyX:24,
   bodyY:24,
   
-  jumpSpeed:60 * re.sys.stepSize,
+  jumpSpeed:20 * re.sys.stepSize,
   jump:false,
   ground:true,
   
@@ -75,7 +75,7 @@ re.c('hero')
   
   this.on({
     update:this.update,
-    noteSounded: this.forceJump,
+
     aftermath:this.jumpReset
   });
   
