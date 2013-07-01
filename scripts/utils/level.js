@@ -177,8 +177,16 @@ re.c('level')
 
       function frequencyFromNoteNumber( note ) {
         console.log("frequencyFromNoteNumber: " + (440 * Math.pow(2,(note-69)/12)));
+        flyFromFrequency(440 * Math.pow(2,(note-69)/12));
         return 440 * Math.pow(2,(note-69)/12);
         
+      }
+
+      function  flyFromFrequency(frequency) {
+        for (var i = 0, jumpLimit = frequency / 10; i < jumpLimit; i++) {
+          hero.forceJump();
+          console.log("flyFromFrequency() frequency: " + frequency)
+        }
       }
 
       function centsOffFromPitch( frequency, note ) {
