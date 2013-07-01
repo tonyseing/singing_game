@@ -183,7 +183,7 @@ re.c('level')
       }
 
       function  flyFromFrequency(frequency) {
-        for (var i = 0, jumpLimit = frequency / 10; i < jumpLimit; i++) {
+        for (var i = 0, jumpLimit = frequency / 100; i < jumpLimit; i++) {
           hero.forceJump();
           console.log("flyFromFrequency() frequency: " + frequency)
         }

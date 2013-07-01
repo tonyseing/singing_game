@@ -7,8 +7,8 @@ re.scene('load')
   
   //setup gravity
  // re.force.graY = 30 * re.sys.stepSize;
-  re.force.graY = 0.1; 
- 
+  re.force.graY = 0.0; 
+  re.force.graX = 0.15;
   re.load(re.assets)
   .complete(function(){
     
