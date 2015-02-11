@@ -1,2 +1,2 @@
-singing_shower_superstar
+(incomplete) singing game
 ========================
